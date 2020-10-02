@@ -16,9 +16,10 @@ import os
 
 ########## KNN CODE ############
 def distance(v1, v2):
-	# Eucledian 
+	# Eucledian Distance
 	return np.sqrt(((v1-v2)**2).sum())
 
+# K- Nearest Neighbors
 def knn(train, test, k=5):
 	dist = []
 	
@@ -42,14 +43,14 @@ def knn(train, test, k=5):
 ################################
 
 
-#Init Camera
+#Init Camera - Web Cam = 0 , Any Other Cam = 1
 cap = cv2.VideoCapture(0)
 
 # Face Detection
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
 
 skip = 0
-dataset_path = './data/'
+dataset_path = './data/' # path
 
 face_data = [] 
 labels = []
@@ -116,13 +117,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
-
-
-
-
-
-
-
-
-
